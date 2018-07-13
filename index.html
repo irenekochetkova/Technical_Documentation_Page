@@ -15,15 +15,16 @@
   </head>
   <body>
     <nav id="navbar">
-      <header id="header">Vue.js</header>
+      
       <ul>
+        <header id="header">Vue.js</header>
         <li><a class="nav-link" href="#Introduction">Introduction</a></li>
-        <li><a class="nav-link" href="#2">Overview and History</a></li>
-        <li><a class="nav-link" href="#3">Templates</a></li>
-        <li><a class="nav-link" href="#4">Reactivity</a></li>
-        <li><a class="nav-link" href="#5">Components</a></li>
-        <li><a class="nav-link" href="#6">Transitions</a></li>
-        <li><a class="nav-link" href="#7">Routing</a></li>
+        <li><a class="nav-link" href="#Overview_and_History" rel="internal">Overview and History</a></li>
+        <li><a class="nav-link" href="#Templates">Templates</a></li>
+        <li><a class="nav-link" href="#Reactivity">Reactivity</a></li>
+        <li><a class="nav-link" href="#Components">Components</a></li>
+        <li><a class="nav-link" href="#Transitions">Transitions</a></li>
+        <li><a class="nav-link" href="#Routing">Routing</a></li>
       <ul>
     </nav>
 
@@ -31,53 +32,75 @@
       <div class="container">
       <section id="Introduction" class="main-section">
         <header>Introduction</header>
-        <p>Vue.js is an open-source JavaScript framework for building user interfaces.[4] Integration into projects that use other JavaScript libraries is simplified with Vue because it is designed to be incrementally adoptable. Vue can also function as a web application framework capable of powering advanced single-page applications.</p>
-        <code></code>
-        <p></p>
-        <li></li>
-        <p></p>
+        <p>Vue.js is an open-source JavaScript framework for building user interfaces. Integration into projects that use other JavaScript libraries is simplified with Vue because it is designed to be incrementally adoptable. Vue can also function as a web application framework capable of powering advanced single-page applications.</p>
       </section>
-      <section id="2" class="main-section">
-        <p></p>
-        <code></code>
-        <p></p>
-        <li></li>
-        <p></p>
+      <section id="Overview_and_History" class="main-section">
+        <header>Overview and History</header>
+        <ul>
+          <li>Overview:</li>
+            <p>Vue.js is a popular JavaScript front-end framework that was built to organize and simplify web development.</p>
+          <li>History:</li>
+            <p>Vue was created by Evan You after working for Google using AngularJS in a number of projects. He later summed up his thought process, "I figured, what if I could just extract the part that I really liked about Angular and build something really lightweight" Vue was originally released in February 2014.</p>
       </section>
-      <section id="3" class="main-section">
-        <p></p>
-        <code></code>
-        <p></p>
-        <li></li>
-        <p></p>
+      <section id="Templates" class="main-section">
+          <header>Templates</header>
+        <p>Vue uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying Vue instance’s data. All Vue templates are valid HTML that can be parsed by spec-compliant browsers and HTML parsers. Under the hood, Vue compiles the templates into virtual DOM render functions. Combined with the reactivity system, Vue is able to calculate the minimal number of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.</p>
+        <p>In Vue, you can use the template syntax or choose to directly write render functions using JSX. In order to do so just replace the template option with a render function. Render functions open up possibilities for powerful component-based patterns — for example, the new transition system is now completely component-based, using render functions internally.</p>
       </section>
-      <section id="4" class="main-section">
-        <p></p>
-        <code></code>
-        <p></p>
-        <li></li>
-        <p></p>
+      <section id="Reactivity" class="main-section">
+          <header>Reactivity</header>
+        <p>One of Vue’s most distinctive features is the unobtrusive reactivity system. Models are just plain JavaScript objects. When you modify them, the view updates. It makes state management very simple and intuitive. Vue provides optimized re-rendering out of the box without you having to do anything. Each component keeps track of its reactive dependencies during its render, so the system knows precisely when to re-render, and which components to re-render.</p>
       </section>
-      <section id="5" class="main-section">
-        <p></p>
-        <code></code>
-        <p></p>
-        <li></li>
-        <p></p>
+      <section id="Components" class="main-section">
+        <header>Components</header>
+        <p>Components are one of the most powerful features of Vue. In a large application, it is necessary to divide the whole app into small, self-contained, and often reusable components to make development manageable. Components extend basic HTML elements to encapsulate reusable code. At a high level, components are custom elements to which the Vue’s compiler attaches behavior. In Vue, a component is essentially a Vue instance with pre-defined options. The code snippet below contains an example of a Vue component.</p>
+        <code>var HomePage = {
+  template: "#home-page",
+  data: function() {
+    return {
+      message: "Welcome to Vue.js!"
+    };
+  },
+  created: function() {},
+  methods: {},
+  computed: {}
+};
+        </code>
+        
       </section>
-      <section id="6" class="main-section">
-        <p></p>
-        <code></code>
-        <p></p>
-        <li></li>
-        <p></p>
+      <section id="Transitions" class="main-section">
+        <header>Transitions</header>
+        <p>Vue provides a variety of ways to apply transition effects when items are inserted, updated, or removed from the DOM. This includes tools to:</p>
+        <ul>
+          <li>automatically apply classes for CSS transitions and animations</li>
+          <li>integrate third-party CSS animation libraries, such as Animate.css</li>
+          <li>use JavaScript to directly manipulate the DOM during transition hooks</li>
+          <li>ntegrate third-party JavaScript animation libraries, such as Velocity.js</li>
+        </ul>
+        <p>When an element wrapped in a transition component is inserted or removed, this is what happens:</p>
+        <ol>
+          <li>Vue will automatically sniff whether the target element has CSS transitions or animations applied. If it does, CSS transition classes will be added/removed at appropriate timings.</li>
+          <li>If the transition component provided JavaScript hooks, these hooks will be called at appropriate timings.</li>
+          <li>If no CSS transitions/animations are detected and no JavaScript hooks are provided, the DOM operations for insertion and/or removal will be executed immediately on next frame.</li>
+        </ol>
       </section>
-      <section id="7" class="main-section">
-        <p></p>
-        <code></code>
-        <p></p>
-        <li></li>
-        <p></p>
+      <section id="Routing" class="main-section">
+        <header>Routing</header>
+        <p>In a single-page application (SPA) one initial disadvantage was the inability to share links to the exact "sub" page within a specific web page. Because SPAs serve their users only one URL-based response from the server (it typically serves index.html or index.vue), saving bookmarks, or sharing links to a specific article would be impossible. To solve this problem front end routers provide artificial hash-based URLs originally split by a hashbang (#!) page.com/#!/. However, with HTML5 most modern browsers support routing without the use of a hashbang.</p>
+        <p>JavaScript Libraries like Vue provide an easy Interface to change what is displayed on the page based on the current URL path -- regardless of how it was changed (whether by emailed link, refresh, or in-page links). Additionally, using a front-end router allows for the intentional transition of the browser path when certain browser events (i.e. clicks) occur on buttons or links. Vue itself doesn’t come with front-end hashed routing. But the open source "vue-router" package provides an API to change browser URL, use the back button (hash history), and email password resets or email verification links with authentication parameters provided in the URL. It supports mapping nested routes to nested components and offers fine-grained transition control. Creating a front end routed Single-Page Application with Vue + vue-router is made simple. With Vue, developers are already composing applications with small building blocks building larger components. With vue-router, added to the mix, components must merely be mapped to the routes they belong to, and parent/root routes must indicate where children should render.</p>
+        <code>var router = new VueRouter({
+  routes: [{ path: "/", component: HomePage }],
+  scrollBehavior: function(to, from, savedPosition) {
+    return { x: 0, y: 0 };
+  }
+});
+
+var app = new Vue({
+  el: "#vue-app",
+  router: router
+});
+</code>
+       
       </section>
     </div>
     </main> 

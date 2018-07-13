@@ -23,17 +23,42 @@ body {
 }
 
 #header {
-    list-style-type: none;
+    /*position: fixed;*/
+    /*list-style-type: none;*/
     margin: 0;
-    padding: 8px 16px;
+    padding:  18px  16px;
     width: 25%;
     background-color: #f1f1f1;
-    overflow: auto;
-    border: 1px solid #555;
+    font-size: 25px;
+    /*overflow: auto;*/
+    /*border: 1px solid #555;*/
 }
 
 #main-doc {
-   margin-left: 25%;
-
-  
+   margin-left: 25%;  
 }
+
+#main-doc header {
+   font-size: 30px;
+   margin-bottom: 10px;
+}
+
+code {
+  display: block;
+  white-space: pre;
+  background-color: #f1f1f1;
+  color: black;
+  padding: 15px;
+
+  border: 1px solid #eaecf0;
+    border-radius: 2px;
+}
+
+.main-section {
+  padding: 20px;
+}
+
+
+
+
+
